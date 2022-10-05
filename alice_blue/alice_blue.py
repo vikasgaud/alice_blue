@@ -155,13 +155,14 @@ class AliceBlue:
             raise Exception(f"Couldn't get profile info with credentials provided '{e}'")
         self.__master_contracts_by_token = {}
         self.__master_contracts_by_symbol = {}
-        self.__get_master_contract("INDICES")
-        if(master_contracts_to_download == None):
-            for e in self.__enabled_exchanges:
-                self.__get_master_contract(e)
-        else:
-            for e in master_contracts_to_download:
-                self.__get_master_contract(e)
+        #  Disbale Master Contract Download While Object Initialization
+        # self.__get_master_contract("INDICES")
+        # if(master_contracts_to_download == None):
+        #     for e in self.__enabled_exchanges:
+        #         self.__get_master_contract(e)
+        # else:
+        #     for e in master_contracts_to_download:
+        #         self.__get_master_contract(e)
         self.ws_thread = None
 
     @staticmethod
